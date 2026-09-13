@@ -36,7 +36,7 @@ device's "Share With App Developers" setting.
 
 ## Sharing and visibility
 
-Household content is visible only to the members of that household —
+Household content is visible only to the members of that household -
 people who joined with the household's invite code. Any member can
 delete any post, photo, or comment, and members can leave at any time.
 
