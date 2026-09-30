@@ -1,14 +1,14 @@
-# ChoreChart Privacy Policy
+# ubeChores Privacy Policy
 
 **Effective date:** September 13, 2026
 
-ChoreChart ("the app") is published by ube media (Jakob Kubicki). The
+ubeChores ("the app") is published by ube media (Jakob Kubicki). The
 short version: **we store only what your household creates, use it only
 to run the app, and never sell it or use it for advertising.**
 
 ## What the app stores
 
-ChoreChart stores your account and the content your household creates:
+ubeChores stores your account and the content your household creates:
 
 - **Account**: when you sign in with Apple or Google, we receive a
   unique account identifier (and, if you share it, your name). We never
@@ -19,7 +19,7 @@ ChoreChart stores your account and the content your household creates:
 - **Device token**: an anonymous push token so nudges can reach your
   phone as notifications.
 
-This data is stored in ChoreChart's database, hosted on Supabase.
+This data is stored in the ubeChores database, hosted on Supabase.
 Access is enforced at the database level: household content is readable
 and writable only by the members of that household.
 
@@ -37,14 +37,16 @@ device's "Share With App Developers" setting.
 ## Sharing and visibility
 
 Household content is visible only to the members of that household -
-people who joined with the household's invite code. Any member can
-delete any post, photo, or comment, and members can leave at any time.
+people who accepted a personal invitation sent to their email address.
+Any member can delete any post, photo, or comment, and members can leave
+at any time.
 
 ## Notifications
 
-Chore reminders are scheduled locally on your device. Nudges are
-delivered as push notifications through Apple's push service. You can
-disable notifications any time in Settings.
+Chore reminders are scheduled locally on your device. Nudges, overdue
+alerts, and a housemate's completions arrive as push notifications
+through Apple's push service. You can disable notifications any time in
+Settings.
 
 ## Photos and camera
 
@@ -55,12 +57,13 @@ storage bucket and can be removed by any member.
 ## Data deletion
 
 Deleting content in the app removes it for the whole household. To
-delete your account and all data associated with it, email us at the
-address below and we'll remove it promptly.
+delete your account and everything associated with it, open the You tab
+and tap "Delete account"; it is removed from our servers straight away.
+You can also email us at the address below and we'll do it for you.
 
 ## Children
 
-ChoreChart is not directed at children under 13.
+ubeChores is not directed at children under 13.
 
 ## Changes
 

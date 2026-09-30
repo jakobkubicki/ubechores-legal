@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Join on ChoreChart</title>
+<title>Join on ubeChores</title>
 <style>
   body {
     margin: 0;
@@ -47,12 +47,12 @@
   <div class="ball">🪩</div>
   <div id="hasToken">
     <h1>You're invited</h1>
-    <p>Someone wants you in their house on ChoreChart. If you have the app, this button brings you straight in.</p>
-    <a class="button" id="openApp" href="#">Open ChoreChart</a>
+    <p>Someone wants you in their house on ubeChores. If you have the app, this button brings you straight in.</p>
+    <a class="button" id="openApp" href="#">Open ubeChores</a>
     <p><a class="plain" href="https://testflight.apple.com/join/nsRjQ2DU">Don't have it yet? Get the app first</a>, then come back and tap again.</p>
   </div>
   <div id="noToken">
-    <h1>ChoreChart</h1>
+    <h1>ubeChores</h1>
     <p>This invite link is missing its ticket. Ask your roommate to send a fresh one from the House tab.</p>
   </div>
 </div>
@@ -60,7 +60,7 @@
   var token = new URLSearchParams(location.search).get("t");
   if (token && /^[0-9a-f]{32,}$/i.test(token)) {
     document.getElementById("openApp").href =
-      "chorechart://join?t=" + encodeURIComponent(token);
+      "ubechores://join?t=" + encodeURIComponent(token);
   } else {
     document.getElementById("hasToken").style.display = "none";
     document.getElementById("noToken").style.display = "block";

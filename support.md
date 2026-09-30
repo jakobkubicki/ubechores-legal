@@ -1,6 +1,6 @@
-# ChoreChart Support
+# ubeChores Support
 
-Questions, bugs, or feedback about ChoreChart?
+Questions, bugs, or feedback about ubeChores?
 
 Email **jakobkub@gmail.com** and we will get back to you quickly.
 
