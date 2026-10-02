@@ -20,4 +20,4 @@ Open the You tab and tap Delete account. It happens straight away. What's
 removed and what stays with your house is explained in the
 [privacy policy](./#deleting-your-data).
 
-[Privacy Policy](./)
+[Terms of Use](./terms) · [Privacy Policy](./)
