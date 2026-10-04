@@ -16,12 +16,19 @@
     document.write('<meta name="apple-itunes-app" content="app-id=6817928250' + arg + '">');
   })();
 </script>
+<link rel="icon" href="/icons/ube.ico" type="image/x-icon">
+<meta name="theme-color" content="#0D0B14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet">
+<!-- The same look as www.ube.games and the other ubeChores pages. -->
 <style>
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #14101f;
-    color: #f4f1fa;
+    font-family: 'Nunito', ui-rounded, system-ui, sans-serif;
+    font-weight: 500;
+    background: #0D0B14;
+    color: #F4F1FA;
     display: flex;
     min-height: 100vh;
     align-items: center;
@@ -29,28 +36,50 @@
     text-align: center;
     padding: 16px;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(480px circle at 20% 12%, rgba(180, 77, 255, 0.30), transparent 70%),
+      radial-gradient(420px circle at 85% 80%, rgba(77, 93, 255, 0.20), transparent 70%);
   }
   .card {
     max-width: 420px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 28px;
     padding: 36px 28px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .ball { font-size: 56px; }
-  h1 { font-size: 26px; margin: 12px 0 6px; }
-  p { color: rgba(244, 241, 250, 0.7); line-height: 1.5; }
+  h1 { font-weight: 900; font-size: 28px; letter-spacing: -0.01em; margin: 12px 0 6px; }
+  p { color: rgba(244, 241, 250, 0.72); line-height: 1.55; }
+  #hasToken > p:first-of-type, #noToken > p:first-of-type {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+  }
   a.button {
     display: block;
     margin: 18px 0 10px;
     padding: 14px 20px;
     border-radius: 999px;
-    background: #b48cff;
-    color: #14101f;
+    background: linear-gradient(135deg, #B44DFF, #4D5DFF);
+    color: #fff;
     font-weight: 700;
     text-decoration: none;
   }
-  a.plain { color: rgba(244, 241, 250, 0.7); font-size: 14px; }
+  a.plain {
+    color: rgba(244, 241, 250, 0.8);
+    font-size: 14px;
+    text-decoration-color: rgba(180, 77, 255, 0.6);
+    text-underline-offset: 3px;
+  }
   #noToken { display: none; }
 </style>
 </head>
