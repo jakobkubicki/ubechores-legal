@@ -16,19 +16,54 @@
     document.write('<meta name="apple-itunes-app" content="app-id=6817928250' + arg + '">');
   })();
 </script>
-<link rel="icon" href="/icons/ube.ico" type="image/x-icon">
-<meta name="theme-color" content="#0D0B14">
+<link rel="icon" href="/brand/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#1A0B40" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#E9DDF7" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<!-- The preview an invite shows when it's pasted into Messages. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="You're invited to a house on ubeChores">
+<meta property="og:description" content="Tap to join. Happier homes, cleaner days.">
+<meta property="og:image" content="https://chores.ube.games/brand/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
 <!-- The same look as www.ube.games and the other ubeChores pages. -->
 <style>
+  :root {
+    --canvas: #1A0B40;
+    --text: #FFFFFF;
+    --muted: rgba(255, 255, 255, 0.78);
+    --line: rgba(255, 255, 255, 0.14);
+    --card: rgba(255, 255, 255, 0.07);
+    --shadow: none;
+    --glow-1: rgba(176, 88, 252, 0.40);
+    --glow-2: rgba(123, 47, 240, 0.30);
+    --ube: #B565FF;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --canvas: #E9DDF7;
+      --text: #30136F;
+      --muted: rgba(48, 19, 111, 0.76);
+      --line: rgba(48, 19, 111, 0.10);
+      --card: #FFFDFB;
+      --shadow: 0 6px 28px rgba(48, 19, 111, 0.10);
+      --glow-1: rgba(176, 88, 252, 0.16);
+      --glow-2: rgba(123, 47, 240, 0.10);
+      --ube: #9635F4;
+    }
+  }
   body {
     margin: 0;
     font-family: 'Nunito', ui-rounded, system-ui, sans-serif;
     font-weight: 500;
-    background: #0D0B14;
-    color: #F4F1FA;
+    background: var(--canvas);
+    color: var(--text);
     display: flex;
     min-height: 100vh;
     align-items: center;
@@ -44,40 +79,38 @@
     inset: 0;
     z-index: -1;
     background:
-      radial-gradient(480px circle at 20% 12%, rgba(180, 77, 255, 0.30), transparent 70%),
-      radial-gradient(420px circle at 85% 80%, rgba(77, 93, 255, 0.20), transparent 70%);
+      radial-gradient(520px circle at 20% 10%, var(--glow-1), transparent 70%),
+      radial-gradient(440px circle at 85% 82%, var(--glow-2), transparent 70%);
   }
   .card {
     max-width: 420px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--card);
+    border: 1px solid var(--line);
     border-radius: 28px;
-    padding: 36px 28px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 30px 28px 32px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
-  .ball { font-size: 56px; }
-  h1 { font-weight: 900; font-size: 28px; letter-spacing: -0.01em; margin: 12px 0 6px; }
-  p { color: rgba(244, 241, 250, 0.72); line-height: 1.55; }
-  #hasToken > p:first-of-type, #noToken > p:first-of-type {
-    font-family: 'Fraunces', Georgia, serif;
-    font-style: italic;
-    font-size: 17px;
-  }
+  .mascot { width: 150px; height: auto; display: block; margin: -86px auto 4px; }
+  .word { height: 28px; width: auto; }
+  h1 { font-weight: 900; font-size: 28px; letter-spacing: -0.01em; margin: 14px 0 6px; }
+  p { color: var(--muted); line-height: 1.55; }
+  #hasToken > p:first-of-type, #noToken > p:first-of-type { font-size: 17px; font-weight: 600; }
   a.button {
     display: block;
     margin: 18px 0 10px;
     padding: 14px 20px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #B44DFF, #4D5DFF);
+    background: linear-gradient(135deg, #B058FC, #7B2FF0);
     color: #fff;
-    font-weight: 700;
+    font-weight: 800;
     text-decoration: none;
   }
   a.plain {
-    color: rgba(244, 241, 250, 0.8);
+    color: var(--text);
     font-size: 14px;
-    text-decoration-color: rgba(180, 77, 255, 0.6);
+    text-decoration-color: var(--ube);
     text-underline-offset: 3px;
   }
   #noToken { display: none; }
@@ -85,7 +118,11 @@
 </head>
 <body>
 <div class="card">
-  <div class="ball">🪩</div>
+  <img class="mascot" src="/brand/mascot.svg" alt="">
+  <picture>
+    <source srcset="/brand/wordmark-on-light.svg" media="(prefers-color-scheme: light)">
+    <img class="word" src="/brand/wordmark-on-dark.svg" alt="ubeChores">
+  </picture>
   <div id="hasToken">
     <h1>You're invited</h1>
     <p>Someone wants you in their house on ubeChores. If you have the app, this button brings you straight in.</p>
@@ -93,7 +130,7 @@
     <p><a class="plain" id="getApp" href="https://apps.apple.com/app/id6817928250">Don't have it yet? Get ubeChores on the App Store</a>, then come back and tap Open.</p>
   </div>
   <div id="noToken">
-    <h1>ubeChores</h1>
+    <h1>This invite needs a fresh link</h1>
     <p>This invite link is missing its ticket. Ask your roommate to send a fresh one from the House tab.</p>
   </div>
 </div>
