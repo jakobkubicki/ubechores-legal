@@ -119,4 +119,4 @@ release notes.
 
 ## Contact
 
-Questions or requests: **jakobkub@gmail.com**
+Questions or requests: **support@ube.games**

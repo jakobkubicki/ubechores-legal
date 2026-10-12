@@ -48,4 +48,4 @@ effective date.
 
 ## Contact
 
-**jakobkub@gmail.com**
+**support@ube.games**
