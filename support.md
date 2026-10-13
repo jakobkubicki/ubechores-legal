@@ -1,7 +1,10 @@
 # ubeChores Support
 
-Questions, bugs or feedback? Email **jakobkub@gmail.com**. We reply within a
-day, and usually much sooner.
+Questions or bugs? Email **support@ube.games**. We reply within a day, and
+usually much sooner.
+
+Got an idea for a feature, or just want to say hi? Write to Jakob, who makes
+ubeChores, at **jakob@ube.games**.
 
 ## Something in your feed shouldn't be there
 
