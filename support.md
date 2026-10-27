@@ -1,5 +1,7 @@
 # ubeChores Support
 
+New here? [Get ubeChores on the App Store](https://apps.apple.com/app/id6817928250).
+
 Questions or bugs? Email **support@ube.games**. We reply within a day, and
 usually much sooner.
 
