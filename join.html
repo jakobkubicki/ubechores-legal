@@ -107,13 +107,19 @@
     font-weight: 800;
     text-decoration: none;
   }
+  a.button.secondary {
+    margin-top: 0;
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--text);
+  }
   a.plain {
     color: var(--text);
     font-size: 14px;
     text-decoration-color: var(--ube);
     text-underline-offset: 3px;
   }
-  #noToken { display: none; }
+  #noToken, #noApp { display: none; }
 </style>
 </head>
 <body>
@@ -127,7 +133,14 @@
     <h1>You're invited</h1>
     <p>Someone wants you in their house on ubeChores. If you have the app, this button brings you straight in.</p>
     <a class="button" id="openApp" href="#">Open ubeChores</a>
-    <p><a class="plain" id="getApp" href="https://apps.apple.com/app/id6817928250">Don't have it yet? Get ubeChores on the App Store</a>, then come back and tap Open.</p>
+    <a class="button secondary" href="https://apps.apple.com/app/id6817928250">Get the app first</a>
+    <p>New to ubeChores? Get the app, then come back to this link and tap Open.</p>
+  </div>
+  <div id="noApp">
+    <h1>Get ubeChores first</h1>
+    <p>It doesn't look like ubeChores is on this phone yet. Get it from the App Store, then come back to this link and tap Open to join the house.</p>
+    <a class="button" href="https://apps.apple.com/app/id6817928250">Get ubeChores on the App Store</a>
+    <p><a class="plain" id="tryAgain" href="#">I have it now: open ubeChores</a></p>
   </div>
   <div id="noToken">
     <h1>This invite needs a fresh link</h1>
@@ -137,8 +150,24 @@
 <script>
   var token = new URLSearchParams(location.search).get("t");
   if (token && /^[0-9a-f]{32,}$/i.test(token)) {
-    document.getElementById("openApp").href =
-      "ubechores://join?t=" + encodeURIComponent(token);
+    var appLink = "ubechores://join?t=" + encodeURIComponent(token);
+    // Without the app, iOS can't open the link: Safari says "the address
+    // is invalid" and the page stays put. If we're still here a moment
+    // after the tap, the app isn't installed, so say what to do next.
+    var open = function (event) {
+      event.preventDefault();
+      location.href = appLink;
+      setTimeout(function () {
+        if (document.visibilityState === "visible") {
+          document.getElementById("hasToken").style.display = "none";
+          document.getElementById("noApp").style.display = "block";
+        }
+      }, 1500);
+    };
+    document.getElementById("openApp").href = appLink;
+    document.getElementById("openApp").addEventListener("click", open);
+    document.getElementById("tryAgain").href = appLink;
+    document.getElementById("tryAgain").addEventListener("click", open);
   } else {
     document.getElementById("hasToken").style.display = "none";
     document.getElementById("noToken").style.display = "block";
